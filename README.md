@@ -42,11 +42,6 @@ A 2D simulation of an Autonomous Mobile Robot (AMR) that plans and follows a pat
   numpy>=1.24.0
   ```
 
-Install with:
-```bash
-pip install pygame numpy
-```
-
 ## Repository Structure
 
 ```
