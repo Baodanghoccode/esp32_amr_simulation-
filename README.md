@@ -41,17 +41,33 @@ A 2D simulation of an Autonomous Mobile Robot (AMR) that plans and follows a pat
   pygame>=2.5.0
   numpy>=1.24.0
   ```
-
 ## Repository Structure
 
 ```
-├── AMR_wavefront/            # PC simulation (Python + Pygame)
-│   ├── core/                 # Application loop, map, robot, graphics, input
-│   ├── component/             # Sensor, Wavefront processor, actuator
-│   ├── utils/                 # Coordinate conversion helpers
-│   └── test.py                # Entry point
+amr-wavefront-esp32/
+├── AMR_wavefront/                 # PC simulation (Python + Pygame)
+│   ├── core/
+│   │   ├── application.py         # Main loop: map/goal setup, orchestrates the whole system
+│   │   ├── amr.py                 # Robot entity model (position, heading, movement)
+│   │   ├── map.py                 # 2D grid map generation and management
+│   │   ├── graphic.py             # Rendering: map, robot, status panel
+│   │   └── input.py                # User input event handling
+│   ├── component/
+│   │   ├── sensor.py               # Environment sensing / obstacle detection
+│   │   ├── processor.py            # Wavefront algorithm + obstacle avoidance logic
+│   │   └── actuator.py             # Sends motor commands (simulated or over UDP to ESP32)
+│   ├── utils/
+│   │   └── utils.py                # Grid <-> pixel coordinate conversion helpers
+│   └── test.py                     # Program entry point
+│
 ├── Code_firmware/
-│   └── firmware_esp32.py      # MicroPython firmware for the ESP32
+│   └── firmware_esp32.py           # MicroPython firmware for the ESP32 (WiFi AP, motor
+│                                    # control, encoder reading, PI speed control, safety timeout)
+│
+├── docs/
+│   └── images/
+│       ├── simulation_screenshot.png   # PC simulation screenshot
+│       └── esp32_hardware.jpg          # Physical robot / ESP32 wiring photo
+│
 └── README.md
 ```
-
