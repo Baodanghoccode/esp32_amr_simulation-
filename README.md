@@ -44,7 +44,7 @@ A 2D simulation of an Autonomous Mobile Robot (AMR) that plans and follows a pat
 ## Repository Structure
 
 ```
-amr-wavefront-esp32/
+esp32_amr_simulation/
 ├── AMR_wavefront/                 # PC simulation (Python + Pygame)
 │   ├── core/
 │   │   ├── application.py         # Main loop: map/goal setup, orchestrates the whole system
@@ -61,13 +61,10 @@ amr-wavefront-esp32/
 │   └── test.py                     # Program entry point
 │
 ├── Code_firmware/
-│   └── firmware_esp32.py           # MicroPython firmware for the ESP32 (WiFi AP, motor
-│                                    # control, encoder reading, PI speed control, safety timeout)
-│
+│   └── firmware_esp32.py         
 ├── docs/
 │   └── images/
 │       ├── simulation_screenshot.png   # PC simulation screenshot
 │       └── esp32_hardware.jpg          # Physical robot / ESP32 wiring photo
-│
 └── README.md
 ```
